@@ -4,7 +4,7 @@ namespace Northwestern\SysDev\DirectoryLookupComponent\Tests;
 
 use Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup;
 use Northwestern\SysDev\DynamicForms\Components\CaseEnum;
-use Northwestern\SysDev\DynamicForms\Tests\Components\InputComponentTestCase;
+use Northwestern\SysDev\DynamicForms\Tests\Components\TestCases\InputComponentTestCase;
 use Northwestern\SysDev\SOA\DirectorySearch;
 
 class DirectoryLookupTest extends InputComponentTestCase
