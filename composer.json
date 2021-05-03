@@ -1,0 +1,52 @@
+{
+  "name": "northwestern-sysdev/dynamic-forms-directory-search",
+  "description": "Northwestern Directory Search component for Dynamic Forms",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nick Evans",
+      "email": "nick.evans@northwestern.edu"
+    }
+  ],
+  "require": {
+    "php": "^8",
+    "northwestern-sysdev/laravel-soa": "^6|^7",
+    "northwestern-sysdev/dynamic-forms": "dev-develop"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.17",
+    "phpunit/phpunit": "^9",
+    "php-coveralls/php-coveralls": "^2.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Northwestern\\SysDev\\DirectoryLookupComponent\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Northwestern\\SysDev\\DirectoryLookupComponent\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Northwestern\\SysDev\\DirectoryLookupComponent\\DirectoryLookupComponentProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php ./vendor/bin/testbench package:discover --ansi"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+
+  "repositories": [{
+    "type": "path",
+    "url": "../dynamic-forms",
+    "symlink": true
+  }]
+}
