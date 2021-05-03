@@ -1,0 +1,17 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Http\Controllers\Controller;
+use Northwestern\SysDev\DirectoryLookupComponent\Concerns\HandlesDirectorySearch;
+use Northwestern\SysDev\SOA\DirectorySearch;
+
+class DynamicFormsDirectoryController extends Controller
+{
+    use HandlesDirectorySearch;
+
+    public function __invoke(DirectorySearch $directoryApi, string $search)
+    {
+        return $this->lookup($directoryApi, $search);
+    }
+}
