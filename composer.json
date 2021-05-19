@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": "^8",
-    "northwestern-sysdev/laravel-soa": "^6|^7",
+    "northwestern-sysdev/laravel-soa": "^6|^7|^8",
     "northwestern-sysdev/dynamic-forms": "^0.1"
   },
   "require-dev": {
