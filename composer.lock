@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74a157c518f87b59e964f30e2cbaed9d",
+    "content-hash": "b6c28c3823fcfa32a9b83dd278f0db95",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1628,16 +1628,16 @@
         },
         {
             "name": "northwestern-sysdev/dynamic-forms",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NIT-Administrative-Systems/dynamic-forms.git",
-                "reference": "a2dca530cc3eddd0246f9b7db14d7ac3fe11a8f8"
+                "reference": "8b67766e047037737c45391a3df0c1c881591f0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NIT-Administrative-Systems/dynamic-forms/zipball/a2dca530cc3eddd0246f9b7db14d7ac3fe11a8f8",
-                "reference": "a2dca530cc3eddd0246f9b7db14d7ac3fe11a8f8",
+                "url": "https://api.github.com/repos/NIT-Administrative-Systems/dynamic-forms/zipball/8b67766e047037737c45391a3df0c1c881591f0c",
+                "reference": "8b67766e047037737c45391a3df0c1c881591f0c",
                 "shasum": ""
             },
             "require": {
@@ -1691,7 +1691,7 @@
             ],
             "support": {
                 "issues": "https://github.com/NIT-Administrative-Systems/dynamic-forms/issues",
-                "source": "https://github.com/NIT-Administrative-Systems/dynamic-forms/tree/v0.1.0"
+                "source": "https://github.com/NIT-Administrative-Systems/dynamic-forms/tree/v0.2.0"
             },
             "funding": [
                 {
@@ -1699,7 +1699,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-05-04T15:31:41+00:00"
+            "time": "2021-05-13T14:32:01+00:00"
         },
         {
             "name": "northwestern-sysdev/event-hub-php-sdk",
