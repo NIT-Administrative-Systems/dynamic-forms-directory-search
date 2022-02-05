@@ -3,6 +3,7 @@
 namespace Northwestern\SysDev\DirectoryLookupComponent\Concerns;
 
 use Illuminate\Http\JsonResponse;
+use Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup;
 use Northwestern\SysDev\SOA\DirectorySearch;
 
 trait HandlesDirectorySearch
@@ -38,13 +39,13 @@ trait HandlesDirectorySearch
     protected function guessType(string $search): string
     {
         if (str_contains($search, '@')) {
-            return 'mail';
+            return DirectoryLookup::SEARCH_TYPE_MAIL;
         }
 
         if (preg_match('/^[0-9]{7}$/', $search)) {
-            return 'emplid';
+            return DirectoryLookup::SEARCH_TYPE_EMPLID;
         }
 
-        return 'netid';
+        return DirectoryLookup::SEARCH_TYPE_NETID;
     }
 }

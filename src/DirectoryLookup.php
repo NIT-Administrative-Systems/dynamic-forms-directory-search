@@ -5,12 +5,17 @@ namespace Northwestern\SysDev\DirectoryLookupComponent;
 use Illuminate\Contracts\Support\MessageBag;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Factory;
+use Illuminate\Validation\Rule;
 use Northwestern\SysDev\DynamicForms\Components\BaseComponent;
 use Northwestern\SysDev\SOA\DirectorySearch;
 
 class DirectoryLookup extends BaseComponent
 {
     const TYPE = 'nuDirectoryLookup';
+
+    const SEARCH_TYPE_NETID = 'netid';
+    const SEARCH_TYPE_MAIL = 'mail';
+    const SEARCH_TYPE_EMPLID = 'emplid';
 
     protected DirectorySearch $api;
 
@@ -46,7 +51,9 @@ class DirectoryLookup extends BaseComponent
 
         $rules = [
             'display' => $singleFieldRules,
-            'searchType' => array_merge($singleFieldRules, ['in:netid,email,emplid']),
+            'searchType' => array_merge($singleFieldRules, [
+                Rule::in([self::SEARCH_TYPE_NETID, self::SEARCH_TYPE_MAIL, self::SEARCH_TYPE_EMPLID]),
+            ]),
             'person.netid' => $singleFieldRules,
             'person.email' => $singleFieldRules,
             'person.name' => $singleFieldRules,
