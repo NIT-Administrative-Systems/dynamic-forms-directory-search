@@ -9,6 +9,8 @@ use Northwestern\SysDev\SOA\DirectorySearch;
 
 /**
  * @coversDefaultClass \Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup
+ * @covers ::validSearchTypes
+ * @covers ::directoryValidation
  */
 class DirectoryLookupTest extends InputComponentTestCase
 {
