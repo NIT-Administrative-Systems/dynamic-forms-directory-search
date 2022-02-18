@@ -7,7 +7,7 @@ use Northwestern\SysDev\SOA\DirectorySearch;
 use Orchestra\Testbench\TestCase;
 
 /**
- * @coversDefaultClass \Northwestern\SysDev\DirectoryLookupComponent\Concerns\HandlesDirectorySearch;
+ * @coversDefaultClass \Northwestern\SysDev\DirectoryLookupComponent\Concerns\HandlesDirectorySearch
  */
 class HandlesDirectorySearchTest extends TestCase
 {

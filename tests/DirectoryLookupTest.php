@@ -7,6 +7,9 @@ use Northwestern\SysDev\DynamicForms\Components\CaseEnum;
 use Northwestern\SysDev\DynamicForms\Tests\Components\TestCases\InputComponentTestCase;
 use Northwestern\SysDev\SOA\DirectorySearch;
 
+/**
+ * @coversDefaultClass \Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup
+ */
 class DirectoryLookupTest extends InputComponentTestCase
 {
     public string $componentClass = DirectoryLookup::class;
