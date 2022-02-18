@@ -52,7 +52,7 @@ class DirectoryLookup extends BaseComponent
         $rules = [
             'display' => $singleFieldRules,
             'searchType' => array_merge($singleFieldRules, [
-                Rule::in([self::SEARCH_TYPE_NETID, self::SEARCH_TYPE_MAIL, self::SEARCH_TYPE_EMPLID]),
+                Rule::in(static::validSearchTypes()),
             ]),
             'person.netid' => $singleFieldRules,
             'person.email' => $singleFieldRules,
@@ -71,6 +71,25 @@ class DirectoryLookup extends BaseComponent
             return $errorBag;
         }
 
+        $errorBag = $this->directoryValidation($submissionValue, $errorBag);
+
+        return $errorBag;
+    }
+
+    public static function validSearchTypes(): array
+    {
+        return [
+            self::SEARCH_TYPE_NETID,
+            self::SEARCH_TYPE_MAIL,
+            self::SEARCH_TYPE_EMPLID
+        ];
+    }
+
+    /**
+     * Perform the DirectorySearch bit of the validation.
+     */
+    protected function directoryValidation(mixed $submissionValue, MessageBag $errorBag): MessageBag
+    {
         $directory = $this->api->lookup($submissionValue['display'], $submissionValue['searchType'], 'basic');
         if (! $directory) {
             $errorBag->add('display', 'Person not found in directory.');
