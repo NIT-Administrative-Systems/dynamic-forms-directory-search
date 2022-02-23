@@ -15,7 +15,7 @@
     "northwestern-sysdev/dynamic-forms": "^0"
   },
   "require-dev": {
-    "orchestra/testbench": "^6.17",
+    "orchestra/testbench": "^7",
     "phpunit/phpunit": "^9",
     "php-coveralls/php-coveralls": "^2.4"
   },
