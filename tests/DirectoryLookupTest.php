@@ -58,6 +58,7 @@ class DirectoryLookupTest extends InputComponentTestCase
         ?array $conditional = null,
         ?string $customConditional = null,
         string $case = 'mixed',
+        ?array $calculateValue = null,
         mixed $submissionValue = null,
     ): DirectoryLookup {
         $apiStub = $this->createStub(DirectorySearch::class);
@@ -80,6 +81,7 @@ class DirectoryLookupTest extends InputComponentTestCase
             $conditional,
             $customConditional,
             $case,
+            $calculateValue,
             $submissionValue
         );
         $component->setDirectorySearch($apiStub);
