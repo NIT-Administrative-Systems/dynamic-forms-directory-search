@@ -43,7 +43,7 @@ class DirectoryLookup extends BaseComponent
         $this->api = $api;
     }
 
-    protected function processValidations(string $fieldKey, mixed $submissionValue, Factory $validator): MessageBag
+    protected function processValidations(string $fieldKey, string $fieldLabel, mixed $submissionValue, Factory $validator): MessageBag
     {
         $singleFieldRules = ['nullable', 'string'];
         if ($this->validation('required')) {
