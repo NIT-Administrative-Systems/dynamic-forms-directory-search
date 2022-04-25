@@ -30,10 +30,11 @@ class DirectoryLookup extends BaseComponent
         ?string $customConditional,
         string $case,
         null|array|string $calculateValue,
+        mixed $defaultValue,
         array $additional
     ) {
         // Components are discarded; these are manual mode fields, which is not supported.
-        parent::__construct($key, $label, $errorLabel, [], $validations, $hasMultipleValues, $conditional, $customConditional, $case, $calculateValue, $additional);
+        parent::__construct($key, $label, $errorLabel, [], $validations, $hasMultipleValues, $conditional, $customConditional, $case, $calculateValue, $defaultValue, $additional);
 
         $this->setDirectorySearch(app()->make(DirectorySearch::class));
     }
