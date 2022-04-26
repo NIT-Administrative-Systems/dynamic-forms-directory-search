@@ -3,6 +3,7 @@
 namespace Northwestern\SysDev\DirectoryLookupComponent\Concerns;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Arr;
 use Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup;
 use Northwestern\SysDev\SOA\DirectorySearch;
 
@@ -19,10 +20,10 @@ trait HandlesDirectorySearch
 
         if ($data) {
             $person = [
-                'netid' => $data['uid'],
-                'email' => $data['mail'],
-                'name' => $data['displayName'][0],
-                'title' => $data['nuAllTitle'][0],
+                'netid' => Arr::get($data, 'uid'),
+                'email' => Arr::get($data, 'mail'),
+                'name' => Arr::get($data, 'displayName.0'),
+                'title' => Arr::get($data, 'nuAllTitle.0'),
             ];
         }
 

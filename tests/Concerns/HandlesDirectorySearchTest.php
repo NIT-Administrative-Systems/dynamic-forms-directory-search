@@ -65,6 +65,33 @@ class HandlesDirectorySearchTest extends TestCase
         ]);
     }
 
+    public function testIncompleteData(): void
+    {
+        $api = $this->createStub(DirectorySearch::class);
+        $api->method('lookup')->willReturn([
+            'uid' => 'test',
+            'mail' => null,
+            'displayName' => ['Test Smith'],
+            'nuAllTitle' => null,
+        ]);
+
+        $this->app['router']->get(__METHOD__.'/{search}', function (string $search) use ($api) {
+            return ($this->mock_controller($api))($search);
+        });
+
+        $response = $this->get(__METHOD__.'/test');
+        $response->assertOk()->assertJson([
+            'display' => 'test',
+            'searchType' => 'netid',
+            'person' => [
+                'netid' => 'test',
+                'email' => null,
+                'name' => 'Test Smith',
+                'title' => null,
+            ],
+        ]);
+    }
+
     /**
      * Makes a stub controller using the HandlesDirectorySearch trait & a mock API object.
      */
