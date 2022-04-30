@@ -62,7 +62,7 @@ class DirectoryLookup extends BaseComponent
         ];
 
         // Make sure the fields we expect to find are actually here
-        $errorBag = $validator->make($submissionValue, $rules)->messages();
+        $errorBag = $validator->make($submissionValue ?? [], $rules)->messages();
 
         if (! $errorBag->isEmpty()) {
             return $errorBag;
