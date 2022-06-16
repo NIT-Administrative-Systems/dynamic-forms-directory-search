@@ -2,6 +2,7 @@
 
 namespace Northwestern\SysDev\DirectoryLookupComponent\Tests;
 
+use Illuminate\Support\Arr;
 use Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup;
 use Northwestern\SysDev\DynamicForms\Components\CaseEnum;
 use Northwestern\SysDev\DynamicForms\Tests\Components\TestCases\InputComponentTestCase;
@@ -26,6 +27,28 @@ class DirectoryLookupTest extends InputComponentTestCase
             'title' => 'Petrologist',
         ],
     ];
+
+    /**
+     * @covers ::directoryValidation
+     */
+    public function testWithoutTitle(): void
+    {
+        $submittedData = self::VALID_DATA;
+        Arr::set($submittedData, 'person.title', null);
+
+        $component = $this->getComponent(
+            submissionValue: $submittedData,
+            directoryApiStubResponse: [
+                'uid' => 'test',
+                'mail' => 'test@example.org',
+                'displayName' => ['Steve Standardstone'],
+                'nuAllTitle' => [],
+            ],
+        );
+
+        $bag = $component->validate($component->key(), app()->make('validator'));
+        $this->assertTrue($bag->isEmpty());
+    }
 
     public function validationsProvider(): array
     {
@@ -61,9 +84,10 @@ class DirectoryLookupTest extends InputComponentTestCase
         ?array $calculateValue = null,
         mixed $defaultValue = null,
         mixed $submissionValue = null,
+        ?array $directoryApiStubResponse = null,
     ): DirectoryLookup {
         $apiStub = $this->createStub(DirectorySearch::class);
-        $apiStub->method('lookup')->willReturn([
+        $apiStub->method('lookup')->willReturn($directoryApiStubResponse ?? [
             'uid' => 'test',
             'mail' => 'test@example.org',
             'displayName' => ['Steve Standardstone'],

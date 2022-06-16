@@ -100,10 +100,10 @@ class DirectoryLookup extends BaseComponent
         }
 
         if (
-            $directory['uid'] != $submissionValue['person']['netid']
-            || $directory['mail'] != $submissionValue['person']['email']
-            || $directory['displayName'][0] != $submissionValue['person']['name']
-            || $directory['nuAllTitle'][0] != $submissionValue['person']['title']
+            Arr::get($directory, 'uid') != $submissionValue['person']['netid']
+            || Arr::get($directory, 'mail') != $submissionValue['person']['email']
+            || Arr::get($directory, 'displayName.0') != $submissionValue['person']['name']
+            || Arr::get($directory, 'nuAllTitle.0') != $submissionValue['person']['title']
         ) {
             $errorBag->add('display', 'Internal error: directory data mismatch');
         }
