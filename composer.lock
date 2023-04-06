@@ -2634,24 +2634,24 @@
         },
         {
             "name": "northwestern-sysdev/dynamic-forms",
-            "version": "v0.11.4",
+            "version": "v0.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NIT-Administrative-Systems/dynamic-forms.git",
-                "reference": "776343d4984f2cd8e9d31a806f8010e941988057"
+                "reference": "c244a9899b4962bb79e3cfc3aa82122029577f25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NIT-Administrative-Systems/dynamic-forms/zipball/776343d4984f2cd8e9d31a806f8010e941988057",
-                "reference": "776343d4984f2cd8e9d31a806f8010e941988057",
+                "url": "https://api.github.com/repos/NIT-Administrative-Systems/dynamic-forms/zipball/c244a9899b4962bb79e3cfc3aa82122029577f25",
+                "reference": "c244a9899b4962bb79e3cfc3aa82122029577f25",
                 "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "^3.80",
-                "illuminate/contracts": "^8|^9",
-                "illuminate/http": "^8|^9",
-                "illuminate/support": "^8|^9",
-                "illuminate/validation": "^8|^9",
+                "illuminate/contracts": "^8|^9|^10",
+                "illuminate/http": "^8|^9|^10",
+                "illuminate/support": "^8|^9|^10",
+                "illuminate/validation": "^8|^9|^10",
                 "jwadhams/json-logic-php": "^1.4",
                 "me-io/php-lodash": "^2.0",
                 "nesbot/carbon": "^2",
@@ -2660,7 +2660,7 @@
                 "symfony/finder": "^6"
             },
             "require-dev": {
-                "orchestra/testbench": "^7",
+                "orchestra/testbench": "^8",
                 "php-coveralls/php-coveralls": "^2.4",
                 "phpunit/phpunit": "^9"
             },
@@ -2700,7 +2700,7 @@
             ],
             "support": {
                 "issues": "https://github.com/NIT-Administrative-Systems/dynamic-forms/issues",
-                "source": "https://github.com/NIT-Administrative-Systems/dynamic-forms/tree/v0.11.4"
+                "source": "https://github.com/NIT-Administrative-Systems/dynamic-forms/tree/v0.12.0"
             },
             "funding": [
                 {
@@ -2708,7 +2708,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-03-27T13:19:58+00:00"
+            "time": "2023-04-06T16:33:22+00:00"
         },
         {
             "name": "northwestern-sysdev/event-hub-php-sdk",
