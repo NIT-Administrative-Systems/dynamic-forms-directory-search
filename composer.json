@@ -11,8 +11,8 @@
   ],
   "require": {
     "php": "^8",
-    "northwestern-sysdev/laravel-soa": "^6|^7|^8",
-    "northwestern-sysdev/dynamic-forms": "^0.11"
+    "northwestern-sysdev/laravel-soa": ">=6",
+    "northwestern-sysdev/dynamic-forms": "^0"
   },
   "require-dev": {
     "orchestra/testbench": "^7",
