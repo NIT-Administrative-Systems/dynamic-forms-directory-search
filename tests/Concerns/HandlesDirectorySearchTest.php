@@ -1,6 +1,6 @@
 <?php
 
-namespace Northwestern\SysDev\DirectoryLookupComponent\Tests;
+namespace Northwestern\SysDev\DirectoryLookupComponent\Tests\Concerns;
 
 use Northwestern\SysDev\DirectoryLookupComponent\Concerns\HandlesDirectorySearch;
 use Northwestern\SysDev\SOA\DirectorySearch;
