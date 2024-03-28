@@ -12,12 +12,12 @@
     "require": {
         "php": "^8",
         "northwestern-sysdev/laravel-soa": ">=6",
-        "northwestern-sysdev/dynamic-forms": "^0"
+        "northwestern-sysdev/dynamic-forms": "*"
     },
     "require-dev": {
-        "orchestra/testbench": "^7",
+        "orchestra/testbench": "^9",
         "phpunit/phpunit": "^10.0",
-        "php-coveralls/php-coveralls": "^2.4"
+        "php-coveralls/php-coveralls": "^2.7"
     },
     "autoload": {
         "psr-4": {
@@ -45,7 +45,7 @@
     "prefer-stable": true,
     "config": {
         "platform": {
-            "php": "8.1"
+            "php": "8.2"
         }
     }
 }
