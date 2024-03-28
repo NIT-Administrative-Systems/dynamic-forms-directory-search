@@ -5,16 +5,11 @@ namespace Northwestern\SysDev\DirectoryLookupComponent\Tests\Concerns;
 use Northwestern\SysDev\DirectoryLookupComponent\Concerns\HandlesDirectorySearch;
 use Northwestern\SysDev\SOA\DirectorySearch;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
 
-/**
- * @coversDefaultClass \Northwestern\SysDev\DirectoryLookupComponent\Concerns\HandlesDirectorySearch
- */
+#[CoversClass(HandlesDirectorySearch::class)]
 final class HandlesDirectorySearchTest extends TestCase
 {
-    /**
-     * @covers ::lookup
-     * @covers ::guessType
-     */
     public function testFound(): void
     {
         $api = $this->createStub(DirectorySearch::class);
@@ -44,10 +39,6 @@ final class HandlesDirectorySearchTest extends TestCase
             ]);
     }
 
-    /**
-     * @covers ::lookup
-     * @covers ::guessType
-     */
     public function testNotFound(): void
     {
         $api = $this->createStub(DirectorySearch::class);
