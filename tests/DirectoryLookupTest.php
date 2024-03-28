@@ -48,7 +48,7 @@ final class DirectoryLookupTest extends InputComponentTestCase
         $this->assertTrue($bag->isEmpty());
     }
 
-    public function validationsProvider(): array
+    public static function validationsProvider(): array
     {
         return [
             'no data passes' => [[], ['display' => ''], true],
@@ -59,7 +59,7 @@ final class DirectoryLookupTest extends InputComponentTestCase
         ];
     }
 
-    public function submissionValueProvider(): array
+    public static function submissionValueProvider(): array
     {
         return [
             'no transformations' => [null, self::VALID_DATA, self::VALID_DATA],
