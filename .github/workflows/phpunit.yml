@@ -13,13 +13,13 @@ jobs:
 
     strategy:
       matrix:
-        php-versions: ['8.1', '8.2']
+        php-versions: ['8.2', '8.3']
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.17.0
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
           coverage: xdebug
@@ -27,17 +27,7 @@ jobs:
       - name: Validate composer.json and composer.lock
         run: composer validate
 
-      - name: Cache Composer packages
-        id: composer-cache
-        uses: actions/cache@v2.1.5
-        with:
-          path: vendor
-          key: php-${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            php-${{ matrix.php-versions }}
-
       - name: Install dependencies
-        if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Run Tests
