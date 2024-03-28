@@ -2,17 +2,15 @@
 
 namespace Northwestern\SysDev\DirectoryLookupComponent\Tests;
 
+use PHPUnit\Framework\Attributes\CoversFunction;
 use Illuminate\Support\Arr;
 use Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup;
 use Northwestern\SysDev\DynamicForms\Components\CaseEnum;
 use Northwestern\SysDev\DynamicForms\Tests\Components\TestCases\InputComponentTestCase;
 use Northwestern\SysDev\SOA\DirectorySearch;
 
-/**
- * @coversDefaultClass \Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup
- * @covers ::validSearchTypes
- * @covers ::directoryValidation
- */
+#[CoversFunction('validSearchTypes')]
+#[CoversFunction('directoryValidation')]
 class DirectoryLookupTest extends InputComponentTestCase
 {
     public string $componentClass = DirectoryLookup::class;
