@@ -2,18 +2,15 @@
 
 namespace Northwestern\SysDev\DirectoryLookupComponent\Tests;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use Illuminate\Support\Arr;
 use Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup;
 use Northwestern\SysDev\DynamicForms\Components\CaseEnum;
 use Northwestern\SysDev\DynamicForms\Tests\Components\TestCases\InputComponentTestCase;
 use Northwestern\SysDev\SOA\DirectorySearch;
 
-/**
- * @coversDefaultClass \Northwestern\SysDev\DirectoryLookupComponent\DirectoryLookup
- * @covers ::validSearchTypes
- * @covers ::directoryValidation
- */
-class DirectoryLookupTest extends InputComponentTestCase
+#[CoversClass(DirectoryLookup::class)]
+final class DirectoryLookupTest extends InputComponentTestCase
 {
     public string $componentClass = DirectoryLookup::class;
 
@@ -28,9 +25,6 @@ class DirectoryLookupTest extends InputComponentTestCase
         ],
     ];
 
-    /**
-     * @covers ::directoryValidation
-     */
     public function testWithoutTitle(): void
     {
         $submittedData = self::VALID_DATA;
@@ -50,7 +44,7 @@ class DirectoryLookupTest extends InputComponentTestCase
         $this->assertTrue($bag->isEmpty());
     }
 
-    public function validationsProvider(): array
+    public static function validationsProvider(): array
     {
         return [
             'no data passes' => [[], ['display' => ''], true],
@@ -61,7 +55,7 @@ class DirectoryLookupTest extends InputComponentTestCase
         ];
     }
 
-    public function submissionValueProvider(): array
+    public static function submissionValueProvider(): array
     {
         return [
             'no transformations' => [null, self::VALID_DATA, self::VALID_DATA],
