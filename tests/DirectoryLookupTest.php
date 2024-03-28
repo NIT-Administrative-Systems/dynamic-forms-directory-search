@@ -11,7 +11,7 @@ use Northwestern\SysDev\SOA\DirectorySearch;
 
 #[CoversFunction('validSearchTypes')]
 #[CoversFunction('directoryValidation')]
-class DirectoryLookupTest extends InputComponentTestCase
+final class DirectoryLookupTest extends InputComponentTestCase
 {
     public string $componentClass = DirectoryLookup::class;
 
