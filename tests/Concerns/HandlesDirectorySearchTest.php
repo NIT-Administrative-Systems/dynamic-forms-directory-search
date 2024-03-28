@@ -1,6 +1,6 @@
 <?php
 
-namespace Northwestern\SysDev\DirectoryLookupComponent\Tests;
+namespace Northwestern\SysDev\DirectoryLookupComponent\Tests\Concerns;
 
 use Northwestern\SysDev\DirectoryLookupComponent\Concerns\HandlesDirectorySearch;
 use Northwestern\SysDev\SOA\DirectorySearch;
@@ -51,7 +51,7 @@ class HandlesDirectorySearchTest extends TestCase
     public function testNotFound(): void
     {
         $api = $this->createStub(DirectorySearch::class);
-        $api->method('lookup')->willReturn(null);
+        $api->method('lookup')->willReturn(false);
 
         $this->app['router']->get(__METHOD__.'/{search}', function (string $search) use ($api) {
             return ($this->mock_controller($api))($search);
