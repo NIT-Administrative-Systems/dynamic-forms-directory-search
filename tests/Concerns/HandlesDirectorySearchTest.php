@@ -9,7 +9,7 @@ use Orchestra\Testbench\TestCase;
 /**
  * @coversDefaultClass \Northwestern\SysDev\DirectoryLookupComponent\Concerns\HandlesDirectorySearch
  */
-class HandlesDirectorySearchTest extends TestCase
+final class HandlesDirectorySearchTest extends TestCase
 {
     /**
      * @covers ::lookup
