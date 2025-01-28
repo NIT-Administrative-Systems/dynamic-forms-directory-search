@@ -20,11 +20,11 @@ final class HandlesDirectorySearchTest extends TestCase
             'nuAllTitle' => ['Head of IT'],
         ]);
 
-        $this->app['router']->get(__METHOD__.'/{search}', function (string $search) use ($api) {
+        $this->app['router']->get(__FUNCTION__.'/{search}', function (string $search) use ($api) {
             return ($this->mock_controller($api))($search);
         });
 
-        $response = $this->get(__METHOD__.'/test');
+        $response = $this->get(__FUNCTION__.'/test');
 
         $response->assertOk()
             ->assertJson([
@@ -44,11 +44,11 @@ final class HandlesDirectorySearchTest extends TestCase
         $api = $this->createStub(DirectorySearch::class);
         $api->method('lookup')->willReturn(false);
 
-        $this->app['router']->get(__METHOD__.'/{search}', function (string $search) use ($api) {
+        $this->app['router']->get(__FUNCTION__.'/{search}', function (string $search) use ($api) {
             return ($this->mock_controller($api))($search);
         });
 
-        $response = $this->get(__METHOD__.'/test@foo.com');
+        $response = $this->get(__FUNCTION__.'/test@foo.com');
         $response->assertNotFound()->assertJson([
             'display' => 'test@foo.com',
             'searchType' => 'mail',
@@ -66,11 +66,11 @@ final class HandlesDirectorySearchTest extends TestCase
             'nuAllTitle' => null,
         ]);
 
-        $this->app['router']->get(__METHOD__.'/{search}', function (string $search) use ($api) {
+        $this->app['router']->get(__FUNCTION__.'/{search}', function (string $search) use ($api) {
             return ($this->mock_controller($api))($search);
         });
 
-        $response = $this->get(__METHOD__.'/test');
+        $response = $this->get(__FUNCTION__.'/test');
         $response->assertOk()->assertJson([
             'display' => 'test',
             'searchType' => 'netid',
